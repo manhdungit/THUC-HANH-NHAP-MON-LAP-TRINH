@@ -1,0 +1,61 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+float tinhcos(float, float, float, char);
+float tinhcos(float a, float b, float c, char goc)
+{
+	if (goc == 'A')
+	{
+		return (b*b + c*c - a*a) / (2 * b*c);
+	}
+	if (goc == 'B')
+	{
+		return (a*a + c*c - b*b) / (2 * a*c);
+	}
+	if (goc == 'C')
+	{
+		return (a*a + b*b - c*c) / (2 * a*b);
+	}
+}
+
+int main()
+{
+	cout << "Nhap vao do dai 3 canh a, b, c cua tam giac: ";
+	float a, b, c;
+	cin >> a >> b >> c;
+	if (a + b <= c || c + b <= a|| a + c <= b)
+	{
+		cout << "Eo phai tam giac";
+		cin >> a;
+	}
+
+	if (a == b&&b == c)
+	{
+		cout << "Tam giac deu";
+		cin >> a;
+	}
+
+	if (a == b || b == c || c == a)
+	{
+		if (tinhcos(a, b, c, 'A') == 0 || tinhcos(a, b, c, 'B') == 0 || tinhcos(a, b, c, 'B') == 0)
+		{
+			cout << "Tam giac vuong can";
+			cin >> a;
+		}
+		else
+		{
+			cout << "Tam giac can";
+			cin >> a;
+		}
+	}
+	else
+	{
+		if (tinhcos(a, b, c, 'A') == 0 || tinhcos(a, b, c, 'B') == 0 || tinhcos(a, b, c, 'C') == 0)
+		{
+			cout << "Tam giac vuong";
+			cin >> a;
+		}
+	}
+	cout << "Tam giac thuong";
+	cin >> a;
+}
