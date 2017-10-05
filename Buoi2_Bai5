@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	int n, i = 2;
+	cout << "Nhap so nguyen duong n: ";
+	cin >> n;
+	//Neu n = 1 thi ko la so nguyen to va ket thuc chuong trinh
+	if (n == 1)
+	{
+		cout << "So da nhap khong la so nguyen to";
+		cin >> n;
+		return 0;
+	}
+	//Neu n = 2 thi la so nguyen to va ket thuc chuong trinh
+	if (n == 2)
+	{
+		cout << "So da nhap la so nguyen to";
+		cin >> n;
+		return 0;
+	}
+	while (i <= sqrt(n))
+	{
+		if (n%i == 0)
+		{
+			cout << "So da nhap khong la so nguyen to";
+			cin >> n;
+			return 0;
+		}
+		else i++;
+	}
+	cout << "So da nhap la so nguyen to";
+	cin >> n;
+	return 0;
+}
