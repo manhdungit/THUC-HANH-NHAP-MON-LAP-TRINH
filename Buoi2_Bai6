@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "Nhap chieu rong, chieu dai: ";
+	int rong, dai, x, y;
+	cin >> rong >> dai;
+	for (y = 1; y <= dai; y++)
+	{
+		for (x = 1; x <= rong; x++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+	cin >> rong;
+	return 0;
+}
