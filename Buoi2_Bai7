@@ -1,0 +1,38 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	int a, b, a1, b1, UCLN, temp;
+	cout << "Nhap a, b: ";
+	cin >> a >> b;
+	a1 = abs(a);
+	b1 = abs(b);
+	if (a == 0 || b == 0)
+		{
+		UCLN = a1 + b1;
+		if (UCLN == 0)
+		{
+			cout << "Khong co uoc chuong lon nhat";
+			cin >> a;
+			return 0;
+		}
+		else
+		{
+			cout << "Uoc chung lon nhat la: GCD = " << UCLN;
+			cin >> a;
+			return 0;
+		}
+		}
+	while (b1 != 0)
+	{
+		temp = a1%b1;
+		a1 = b1;
+		b1 = temp;
+	}
+	UCLN = a1;
+	cout << "Uoc chung lon nhat cua a va b la: GCD = " << a1;
+	cin >> a;
+	return 0;
+}
