@@ -1,0 +1,36 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	float d, d0, tien;
+	cout << "Nhap vao quang duong di (km): ";
+	cin >> d;
+	d0 = d;
+	if (d0 <= 1)
+	{
+		tien = 15000 * d0;
+	}
+	else
+	{
+		tien = 15000;
+		d0--;
+		if (d0 <= 4)
+		{
+			tien += 13500 * d0;
+		}
+		else
+		{
+			tien += 54000;
+			d0 -= 4;
+			tien += d0 * 11000;
+		}
+	}
+	if (d > 120)
+	{
+		tien = tien*0.9;
+	}
+	cout << fixed << setprecision(2) << "Tong so tien la: " << tien <<" VND";
+	cin >> d;
+}
