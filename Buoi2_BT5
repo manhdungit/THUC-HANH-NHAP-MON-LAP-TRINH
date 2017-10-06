@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char a;
+	cout << "Nhap vao chu cai: ";
+	cin >> a;
+	if (a >= 97)
+	{
+		a -= 32;
+	}
+	else
+	{
+		a += 32;
+	}
+	cout << endl << a;
+	cin >> a;
+}
