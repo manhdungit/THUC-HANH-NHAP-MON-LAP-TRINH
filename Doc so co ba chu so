@@ -1,0 +1,231 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	int tram, chuc, donvi;
+	tram = n / 100;
+	if (tram > 0)
+	{
+		switch (tram)
+		{
+		case 1:
+		{
+			cout << "mot tram ";
+			break;
+		}
+		case 2:
+		{
+			cout << "hai tram ";
+			break;
+		}
+		case 3:
+		{
+			cout << "ba tram ";
+			break;
+		}
+		case 4:
+		{
+			cout << "bon tram ";
+			break;
+		}
+		case 5:
+		{
+			cout << "nam tram ";
+			break;
+		}
+		case 6:
+		{
+			cout << "sau tram ";
+			break;
+		}
+		case 7:
+		{
+			cout << "bay tram ";
+			break;
+		}
+		case 8:
+		{
+			cout << "tam tram ";
+			break;
+		}
+		case 9:
+		{
+			cout << "chin tram ";
+			break;
+		}
+
+		}
+	}
+	chuc = (n - 100 * tram) / 10;
+	if (chuc > 0)
+	{
+		switch (chuc)
+		{
+		case 1:
+		{
+			cout << "muoi ";
+			break;
+		}
+		case 2:
+		{
+			cout << "hai muoi ";
+			break;
+		}
+		case 3:
+		{
+			cout << "ba muoi ";
+			break;
+		}
+		case 4:
+		{
+			cout << "bon muoi ";
+			break;
+		}
+		case 5:
+		{
+			cout << "nam muoi ";
+			break;
+		}
+		case 6:
+		{
+			cout << "sau muoi ";
+			break;
+		}
+		case 7:
+		{
+			cout << "bay muoi ";
+			break;
+		}
+		case 8:
+		{
+			cout << "tam muoi ";
+			break;
+		}
+		case 9:
+		{
+			cout << "chin muoi ";
+			break;
+		}
+		}
+	}
+	donvi = n % 10;
+	if (tram == 0 && chuc == 0)
+	{
+		switch (donvi)
+		{
+		case 0:
+		{
+			cout << "khong";
+			break;
+		}
+		case 1:
+		{
+			cout << "mot ";
+			break;
+		}
+		case 2:
+		{
+			cout << "hai ";
+			break;
+		}
+		case 3:
+		{
+			cout << "ba ";
+			break;
+		}
+		case 4:
+		{
+			cout << "bon ";
+			break;
+		}
+		case 5:
+		{
+			cout << "nam ";
+			break;
+		}
+		case 6:
+		{
+			cout << "sau ";
+			break;
+		}
+		case 7:
+		{
+			cout << "bay ";
+			break;
+		}
+		case 8:
+		{
+			cout << "tam ";
+			break;
+		}
+		case 9:
+		{
+			cout << "chin ";
+			break;
+		}
+		}
+	}
+	else 
+		switch (donvi)
+	{
+	case 1:
+		{
+		if (chuc > 0) cout << "mot ";
+		else cout << "le mot";
+			break;
+		}
+	case 2:
+	{
+		if (chuc > 0) cout << "hai ";
+		else cout << "le hai ";
+		break;
+	}
+	case 3:
+	{
+		if (chuc > 0) cout << "ba ";
+		else cout << "le ba ";
+		break;
+	}
+	case 4:
+	{
+		if (chuc > 0) cout << "bon ";
+		else cout << "le bon ";
+		break;
+	}
+	case 5:
+	{
+		if (chuc > 0) cout << "lam ";
+		else cout << "le nam ";
+		break;
+	}
+	case 6:
+	{
+		if (chuc > 0) cout << "sau ";
+		else cout << "le sau ";
+		break;
+	}
+	case 7:
+	{
+		if (chuc > 0) cout << "bay ";
+		else cout << "le bay ";
+		break;
+	}
+	case 8:
+	{
+		if (chuc > 0) cout << "tam ";
+		else cout << "le tam ";
+		break;
+	}
+	case 9:
+	{
+		if (chuc > 0) cout << "chin ";
+		else cout << "le chin ";
+		break;
+	}
+	}
+	label1: cin >> n;
+	return 0;
+}
