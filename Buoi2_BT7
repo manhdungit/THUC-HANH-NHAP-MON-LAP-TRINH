@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "Nhap vao diem toan, li, hoa: ";
+	float toan, li, hoa, tb;
+	cin >> toan >> li >> hoa;
+	tb = (toan + li + hoa) / 3;
+	if (tb >= 9) cout << "Xuat sac";
+	else
+	{
+		if (tb >= 8) cout << "Gioi";
+		else
+		{
+			if (tb >= 6.5) cout << "Kha";
+			else
+			{
+				if (tb >= 5) cout << "Trung binh";
+				else
+				{
+					if (tb >= 3.5) cout << "Yeu";
+					else cout << "Kem";
+				}
+			}
+		}
+	}
+	cin >> toan;
+}
