@@ -1,0 +1,208 @@
+#include <iostream>
+using namespace std;
+
+int UCLN(int, int);
+int factorial(int);
+float mu(float, int);
+int C(int, int);
+int chuvi(int, int);
+int dientich(int, int);
+void docthang(int);
+bool kiemtrangayhople(int, int, int);
+int songaycuathang(int, int);
+void main()
+{
+	cout << "Nhap dd/mm/yy: ";
+	int dd, mm, yy; cin >> dd >> mm >> yy;
+	cout << kiemtrangayhople(dd, mm, yy);
+	/*cout << "Nhap thang: ";
+	int n; cin >> n;
+	docthang(n);*/
+	/*
+	int A, B;
+	cout << "Nhap do dai hai canh: ";
+	cin >> A >> B;
+	cout << "Chu vi: C = " << chuvi(A,B)<<endl;
+	cout << "Dien tich: S = " << dientich(A,B)<<endl;
+	for (int y = 1; y <= B; y++)
+	{
+		for (int x = 1; x <= A; x++)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}*/
+	/*for(int h=1;h<10;h++)
+	{
+		for (int a = 2; a < 10; a++)
+		{
+			cout << a << " x " << h << " = " << a*h<<"	" ;
+		}
+		cout << "\n";
+	}
+	*/
+	//Tam giac Pascal
+	/*cout << "Nhhap n: ";
+	int m; cin >> m;
+	cout << "1\n";
+	for (int n = 2; n <= m; n++)
+	{
+		for (int k = 0; k <= n; k++)
+		{
+			cout << C(k, n) << "	";
+		}
+		cout << "\n";
+	}
+	*/
+	system("pause");
+}
+
+
+
+
+int UCLN(int a, int b)
+{
+	if (a < 0) a = -a;
+	if (b < 0) b = -b;
+	while (a*b != 0)
+	{
+		if (a > b) a = a - b;
+		else b = b - a;
+	}
+	return a + b;
+}
+
+int factorial(int n)
+{
+	if (n == 0) return 1;
+	int T = 1;
+	for (int i = 1; i <=n; i++)
+		T *= i;
+	return T;
+}
+
+float mu(float x, int n)
+{
+	float T = 1.0;
+	for (int i = 1; i <= n; i++)
+	{
+		T *= x;
+	}
+	return T;
+}
+
+int C(int k, int n)
+{
+	return factorial(n) / (factorial(k)*factorial(n - k));
+}
+
+int chuvi(int A, int B)
+{
+	return 2 * (A + B);
+}
+
+int dientich(int A, int B)
+{
+	return A*B;
+}
+
+void docthang(int n)
+{
+	switch (n)
+	{
+	case 1:
+	{
+		cout << "Thang 1";
+		break;
+	}
+	case 2:
+	{
+		cout << "February";
+		break;
+	}
+	case 3:
+	{
+		cout << "March";
+		break;
+	}
+	case 4:
+	{
+		cout << "April";
+		break;
+	}
+	case 5:
+	{
+		cout << "May";
+		break;
+	}
+	case 6:
+	{
+		cout << "June";
+		break;
+	}
+	case 7:
+	{
+		cout << "July";
+		break;
+	}
+	case 8:
+	{
+		cout << "August";
+		break;
+	}
+	case 9:
+	{
+		cout << "September";
+		break;
+	}
+	case 10:
+	{
+		cout << "October";
+		break;
+	}
+	case 11:
+	{
+		cout << "November";
+		break;
+	}
+	case 12:
+	{
+		cout << "December";
+		break;
+	}
+	}
+	cout << "\n";
+}
+
+bool kiemtrangayhople(int dd, int mm, int yy)
+{
+	if (yy <= 0) return false;
+	if (mm <= 0 || mm >= 13) return false;
+	if (dd <= 0 || dd > songaycuathang(mm,yy)) return false;
+	return true;
+}
+
+int songaycuathang(int mm, int yy)
+{
+	switch (mm)
+	{
+	case 4:
+	case 6:
+	case 10:
+	case 11:
+	{
+		return 30;
+		break;
+	}
+	case 2:
+	{
+		if (yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)) return 29;
+		else return 28;
+	}
+	default :
+	{
+		return 31;
+		break;
+	}
+	}
+}
